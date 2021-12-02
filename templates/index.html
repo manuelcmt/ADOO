@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg navigation-clean" style="background: #0082cc;color: rgb(255,255,255);">
+    <div class="container"><a class="navbar-brand" href="#">EDITORIAL</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="login-clean">
+    <form method="post"><h2 class="visually-hidden">Login Form</h2>
+        <div class="illustration">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                 class="bi bi-person-fill" style="color: #0082cc;">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            </svg>
+        </div>
+        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Correo"></div>
+        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Contraseña"
+                                 style="color: rgb(80,94,108);"></div>
+        <div class="dropdown d-xl-flex flex-fill justify-content-xl-center align-items-xl-center">
+            <button class="btn btn-light dropdown-toggle text-capitalize text-start d-lg-flex d-xl-flex flex-fill align-content-center align-self-center flex-sm-fill flex-md-fill flex-lg-fill justify-content-lg-center align-items-lg-center flex-xl-fill justify-content-xl-start align-items-xl-center flex-xxl-fill"
+                    aria-expanded="false" data-bs-toggle="dropdown" type="button"
+                    style="color: #505e6c;text-align: left;">Rol
+            </button>
+            <div class="dropdown-menu flex-fill"><a class="dropdown-item" href="#">Administrador</a><a
+                    class="dropdown-item" href="#">Corrector</a><a class="dropdown-item" href="#">Diseñador</a><a
+                    class="dropdown-item" href="#">Editor</a><a class="dropdown-item" href="#">Maquetador</a><a
+                    class="dropdown-item" href="#">Traductor</a></div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary d-block w-100" type="submit" style="background: #0082cc;">Iniciar sesión
+            </button>
+        </div>
+        <a class="forgot" href="#">¿Olvidaste tu correo o contraseña?</a></form>
+</section>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

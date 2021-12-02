@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cambio de roles</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>{{ formulario.roles }}</div>
+
+        <input type="submit" name="Enviar">
+
+    </form>
+</body>
+</html>

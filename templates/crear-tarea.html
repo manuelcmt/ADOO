@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div>Empleado encargado: {{ formulario.encargado }}</div>
+    <div>Fecha de entrega: {{ formulario.entrega }}</div>
+    <div>Monto a pagar: {{ formulario.importe }}</div>
+    <div>Tipo de tarea: {{ formulario.tipo }}</div>
+
+    <input type="submit" name="Crear">
+</form>
+
+</body>
+</html>

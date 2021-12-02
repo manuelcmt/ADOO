@@ -4,3 +4,5 @@ from django.contrib import admin
 from EditorialProjects.models import *
 
 admin.site.register(UsuarioBase)
+admin.site.register(InvitacionUsuario)
+admin.site.register(Tarea)

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg navigation-clean-button"
+     style="background: #0082cc;color: rgb(255,255,255);">
+    <div class="container"><a class="navbar-brand border-light" href="#">EDITORIAL</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="#" style="color: rgb(255,255,255);">Proyectos</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Tareas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Pagos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Créditos</a></li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                                                 data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);">Usuario</a>
+                    <div class="dropdown-menu"><a class="dropdown-item" href="#">Invitar</a><a class="dropdown-item"
+                                                                                               href="#">Modificar</a><a
+                            class="dropdown-item" href="#">Desactivar</a></div>
+                </li>
+            </ul>
+            <span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#"
+                                                  style="background: #124e89;">Cerrar sesión</a></span></div>
+    </div>
+</nav>
+<section class="login-clean">
+    <br><h4 class="mx-auto">Usuarios</h4>
+    <table class="table table table-striped; mx-auto">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+            <tr>
+              {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.first_name }}</td>
+                    <td>{{ usuario.last_name }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td><a href="{% url 'cambiar-roles' usuario.id %}">Cambiar roles</a> <a href="{% url 'desactivar-usuario' usuario.id %}">Desactivar</a></td>
+                </tr>
+
+            {% endfor %}
+            </tr>
+      </tbody>
+    </table>
+</section>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

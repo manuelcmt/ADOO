@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-
-from EditorialProjects.models import *
+from django.contrib.auth.models import User
+from .Tarea import Tarea
 
 
 class FormularioRegistro(UserCreationForm):

@@ -7,7 +7,7 @@ def nuevo_registro(sender, instance, created, **kwargs):
     if created:
         usuario = UsuarioBase.objects.create(usuario=instance)
 
-        invitacion = InvitacionUsuario.objects.get(correo=instance.email)
+        invitacion = InvitacionUsuario.objects.filter(correo=instance.email)
 
         if invitacion.es_administrador:
             instance.groups.add(Group.objects.get(name='Administradores'))

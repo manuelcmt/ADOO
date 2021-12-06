@@ -1,8 +1,5 @@
-# Expansión del usuario estándar de Django.
-from .Usuario import UsuarioBase
-from .Usuario import InvitacionUsuario
-
-from .Tarea import Tarea
+from django.contrib.auth.models import User
+from django.db import models
 
 class Tarea(models.Model):
     NO_ASIGNADA = 'NA'
@@ -37,7 +34,7 @@ class Tarea(models.Model):
     TIPOS_TAREAS = [
         (CORRECTOR, 'Corrección'),
         (DISENADOR, 'Diseño'),
-        (MAQUETADOR, 'Maquetación'), # 3 min
+        (MAQUETADOR, 'Maquetación'),
         (TRADUCTOR, 'Traducción'),
     ]
 

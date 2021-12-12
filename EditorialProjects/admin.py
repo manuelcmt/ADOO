@@ -6,3 +6,5 @@ from EditorialProjects.models import *
 admin.site.register(UsuarioBase)
 admin.site.register(InvitacionUsuario)
 admin.site.register(Tarea)
+admin.site.register(Serie)
+admin.site.register(Proyecto)

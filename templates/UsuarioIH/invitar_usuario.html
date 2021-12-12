@@ -9,29 +9,9 @@
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 </head>
 <body>
-<nav class="navbar navbar-dark navbar-expand-lg navigation-clean-button"
-     style="background: #0082cc;color: rgb(255,255,255);">
-    <div class="container"><a class="navbar-brand border-light" href="#">EDITORIAL</a>
-        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
-                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="#" style="color: rgb(255,255,255);">Proyectos</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Tareas</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Pagos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);">Créditos</a></li>
-                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                                                 data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);">Usuario</a>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">Invitar</a><a class="dropdown-item"
-                                                                                               href="#">Modificar</a><a
-                            class="dropdown-item" href="#">Desactivar</a></div>
-                </li>
-            </ul>
-            <span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="#"
-                                                  style="background: #124e89;">Cerrar sesión</a></span></div>
-    </div>
-</nav>
+
+{% include 'navegacion.html' %}
+
 <section class="login-clean">
     <form method="post" style="max-width: 500px;"><h2 class="visually-hidden">Login Form</h2>
 
@@ -45,6 +25,9 @@
                       d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"></path>
             </svg>
         </div>
+
+        {% include 'alertas.html' %}
+
         <div class="mb-3" placeholder="Nombre"><label
                 class="form-label text-center d-xl-flex justify-content-xl-center align-items-xl-center"
                 style="font-weight: bold;">Información</label>

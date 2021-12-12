@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark navbar-expand-lg navigation-clean-button"
+     style="background: #0082cc;color: rgb(255,255,255);">
+    <div class="container"><a class="navbar-brand border-light" href="{% url 'inicio' %}">EDITORIAL</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="{% url 'consultar-series' %}"
+                                        style="color: rgb(255,255,255);">Series</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'registrar-proyecto' %}"
+                                        style="color: rgb(255,255,255);">Registrar Proyectos</a></li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                                                 data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);">Usuario</a>
+                    <div class="dropdown-menu"><a class="dropdown-item" href="{% url 'invitar-usuario' %}">Invitar</a><a
+                            class="dropdown-item"
+                            href="{% url 'modificar-usuario' %}">Modificar</a><a class="dropdown-item" href="{% url 'validar-usuario' %}">Validar Invitación</a></div>
+                </li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="{% url 'cerrar-sesion' %}"
+                                                  style="background: #124e89;">Cerrar sesión</a></span>
+            {% endif %}
+        </div>
+    </div>
+</nav>

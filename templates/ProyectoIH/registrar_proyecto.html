@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+<body>
+
+{% include 'navegacion.html' %}
+
+<section class="login-clean">
+    <form method="post" style="max-width: 500px;"><h2 class="visually-hidden">Login Form</h2>
+
+        {% csrf_token %}
+
+        <div class="illustration">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                 class="bi bi-person-plus-fill" style="color: #0082cc;">
+                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
+            </svg>
+        </div>
+
+        {% include 'alertas.html' %}
+
+        <div class="mb-3">
+            <select class="form-control" name="serie">
+                {% for serie in series_asignadas %}
+                    <option value="{{ serie.id }}">{{ serie.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            {{ formulario.no_entrega }}
+        </div>
+        <div class="mb-3">
+            {{ formulario.nombre }}
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary d-block w-100" type="submit" style="background: #0082cc;">Registrar</button>
+        </div>
+
+    </form>
+</section>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

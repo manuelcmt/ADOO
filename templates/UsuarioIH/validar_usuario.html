@@ -8,28 +8,10 @@
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 </head>
 <body>
-<nav class="navbar navbar-dark navbar-expand-lg navigation-clean" style="background: #0082cc;color: rgb(255,255,255);">
-    <div class="container"><a class="navbar-brand" href="#">EDITORIAL</a>
-        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
-                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"></li>
-                <li class="nav-item"></li>
-                <li class="nav-item"></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<section class="login-clean">
 
-    {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+{% include 'navegacion.html' %}
+
+<section class="login-clean">
 
     <form method="post"><h2 class="visually-hidden">Login Form</h2>
 
@@ -41,6 +23,9 @@
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
             </svg>
         </div>
+
+        {% include 'alertas.html' %}
+
         <div class="mb-3" placeholder="Nombre"><label
                 class="form-label text-center d-xl-flex justify-content-xl-center align-items-xl-center"
                 style="font-weight: bold;">Información</label></div>

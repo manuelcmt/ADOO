@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.min.css">
+
+    <script>
+        function confirmar_desactivacion(){
+            document.formulario_desactivar.confirmacion.checked = true;
+        }
+    </script>
+</head>
+<body>
+
+{% include 'navegacion.html' %}
+
+<section class="login-clean">
+
+    <form class="text-start" method="post" name="formulario_desactivar"><h2 class="visually-hidden">Login Form</h2>
+        {% include 'alertas.html' %}
+        <div class="illustration">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                 class="bi bi-person-dash-fill" style="color: #0082cc;">
+                <path fill-rule="evenodd" d="M11 7.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"></path>
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            </svg>
+        </div>
+        <div class="mb-3"><label
+                class="form-label text-center d-xl-flex justify-content-xl-center align-items-xl-center"
+                style="font-weight: bold;">Información</label>
+                <h2 style="text-align: center">{{ usuario.first_name }} {{ usuario.last_name }}</h2>
+
+            {% if tareas %}
+        <div><label class="form-label text-center d-xl-flex justify-content-xl-center align-items-xl-center"
+                    style="font-weight: bold;">Tareas asignadas</label>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for tarea in tareas %}
+                    <tr>
+                        <td>{{ tarea }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+            {% else %}
+
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <input class="visually-hidden" name="confirmacion" type="checkbox">
+            <button onclick="confirmar_desactivacion()" class="btn btn-primary d-block w-100" type="submit" style="background: #e43b44;">Desactivar</button>
+        </div>
+
+            {% endif %}
+        <div class="mb-3">
+            <a class="btn btn-primary d-block w-100" style="background: #0082cc;" href="{% url 'modificar-usuario' %}">Volver</a>
+        </div>
+    </form>
+</section>
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

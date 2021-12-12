@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+<body>
+
+{% include 'navegacion.html' %}
+
+<section class="login-clean">
+    <form method="post" style="max-width: 500px;"><h2 class="visually-hidden">Login Form</h2>
+
+        {% csrf_token %}
+
+        <div class="illustration">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                 class="bi bi-person-plus-fill" style="color: #0082cc;">
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                <path fill-rule="evenodd"
+                      d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"></path>
+            </svg>
+        </div>
+
+        {% include 'alertas.html' %}
+
+        <div class="mb-3">
+            {{ formulario.nombre }}
+        </div>
+        <div class="mb-3">
+            {{ formulario.autores }}
+        </div>
+        <div class="mb-3">
+            {{ formulario.descripcion }}
+        </div>
+
+        <div class="mb-3">
+            <select class="form-control" name="editor_asignado">
+                {% for editor in editores %}
+                    <option value="{{ editor.id }}">{{ editor.first_name }} {{ editor.last_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary d-block w-100" type="submit" style="background: #0082cc;">Registrar</button>
+        </div>
+
+    </form>
+</section>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

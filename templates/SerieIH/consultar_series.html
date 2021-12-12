@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CurrentDesign</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+</head>
+<body>
+
+{% include 'navegacion.html' %}
+
+<section class="login-clean">
+    <br>
+    <div><label class="form-label text-center d-xl-flex justify-content-xl-center align-items-xl-center"
+                    style="font-weight: bold;">Series asignadas</label>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for serie in series %}
+                    <tr>
+                        <td><a href="{% url 'proyectos-serie' serie.id %}">{{ serie }}</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</section>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

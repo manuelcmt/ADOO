@@ -1,8 +1,11 @@
 # Expansión del usuario estándar de Django.
-from .Usuario import UsuarioBase
-from .Usuario import InvitacionUsuario
+from .UsuarioBD import UsuarioBase
+from .UsuarioBD import InvitacionUsuario
 
-from .Tarea import Tarea
+from .SerieBD import Serie
+
+from .ProyectoBD import Tarea
+from .ProyectoBD import Proyecto
 
 class Tarea(models.Model):
     NO_ASIGNADA = 'NA'
